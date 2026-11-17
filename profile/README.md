@@ -20,19 +20,11 @@ Every asset ships with a SHA-256 checksum. Download pages with verification step
 
 ### Source
 
-SignalLock is now a single Rust codebase that builds for all three platforms:
+SignalLock is a single Rust codebase that builds for all three platforms:
 
 **[`muhammetsafak/signallock`](https://github.com/muhammetsafak/signallock)**
 
 Issues, pull requests and releases live there.
-
-The repositories in this organization are the earlier per-platform implementations. They were superseded by the Rust app and are kept as reference only; they receive no new features.
-
-| Repository | What it was |
-|---|---|
-| [`signallockapp/macos`](https://github.com/signallockapp/macos) | Native macOS menu-bar app (Swift) |
-| [`signallockapp/windows`](https://github.com/signallockapp/windows) | Native Windows tray app (.NET) |
-| [`signallockapp/linux`](https://github.com/signallockapp/linux) | Linux prototype |
 
 ### What it does
 
