@@ -2,29 +2,51 @@
 
 **Your computer locks itself when you walk away.**
 
-SignalLock is a privacy-first, cross-platform desktop utility that automatically locks your computer when a trusted Bluetooth device moves out of range. Nothing leaves your machine — no cloud, no account, no telemetry, no location tracking.
+SignalLock is a privacy-first tray / menu-bar app for macOS, Windows and Linux. It locks your computer when a trusted Bluetooth device moves out of range. There is no backend, no account, no telemetry and no location tracking.
 
-### Apps
+### Download
 
-| Platform | Repository | Status |
+Installers for all three platforms are published on one release page:
+
+**[Latest release →](https://github.com/muhammetsafak/signallock/releases/latest)**
+
+| Platform | Package | Requirement |
 |---|---|---|
-| macOS | [`signallockapp/macos`](https://github.com/signallockapp/macos) | Available |
-| Windows | [`signallockapp/windows`](https://github.com/signallockapp/windows) | Available |
-| Linux | [`signallockapp/linux`](https://github.com/signallockapp/linux) | Phase 0 — spike validation |
+| macOS | `.dmg` (signed and notarized) | macOS 13 or newer |
+| Windows | `-setup.exe` | Windows 10 / 11 |
+| Linux | `.AppImage` | x86_64; GNOME needs the AppIndicator extension for the tray icon |
+
+Every asset ships with a SHA-256 checksum. Download pages with verification steps are on [signallock.app](https://signallock.app).
+
+### Source
+
+SignalLock is now a single Rust codebase that builds for all three platforms:
+
+**[`muhammetsafak/signallock`](https://github.com/muhammetsafak/signallock)**
+
+Issues, pull requests and releases live there.
+
+The repositories in this organization are the earlier per-platform implementations. They were superseded by the Rust app and are kept as reference only; they receive no new features.
+
+| Repository | What it was |
+|---|---|
+| [`signallockapp/macos`](https://github.com/signallockapp/macos) | Native macOS menu-bar app (Swift) |
+| [`signallockapp/windows`](https://github.com/signallockapp/windows) | Native Windows tray app (.NET) |
+| [`signallockapp/linux`](https://github.com/signallockapp/linux) | Linux prototype |
 
 ### What it does
 
-1. Pick a trusted BLE device once — Apple Watch, AirPods, Galaxy Watch, fitness band, or a BLE keychain tag.
-2. SignalLock watches its signal strength quietly in the background.
-3. When the device leaves range and stays away for your configured delay, the screen is locked.
-4. That's it. SignalLock never unlocks anything — you always use your OS password, PIN, or biometric.
+1. Pick one trusted Bluetooth device once: a phone, watch, earbuds or a BLE keychain tag.
+2. SignalLock watches its signal strength in the background.
+3. When the device stays out of range for your configured delay, the screen is locked.
+4. SignalLock never unlocks anything. You always unlock with your OS password, PIN or biometric.
 
 ### Privacy commitments
 
-- No internet connection required.
-- No location tracking — only Bluetooth signal strength of devices you choose.
-- No personal data collected, stored, or transmitted.
+- No network request on its own. The only connection the app ever opens is the update check you start by clicking *Check for Updates…*, and it goes to GitHub.
+- No location tracking; only the Bluetooth signal strength of the device you chose.
 - No telemetry, no analytics, no accounts.
+- Settings stay in two JSON files on your machine.
 
 ### Website
 
@@ -32,4 +54,4 @@ SignalLock is a privacy-first, cross-platform desktop utility that automatically
 
 ### License
 
-All apps are licensed under the **GNU General Public License v3.0**. See each repository's `LICENSE` file for the full text, or <https://www.gnu.org/licenses/gpl-3.0.html>.
+SignalLock is licensed under the **GNU General Public License v3.0 or later**. See the [`LICENSE`](https://github.com/muhammetsafak/signallock/blob/main/LICENSE) file in the source repository.
