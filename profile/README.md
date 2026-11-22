@@ -1,3 +1,7 @@
+> [!IMPORTANT]
+> **SignalLock is published at [`muhammetsafak/signallock`](https://github.com/muhammetsafak/signallock), not under this organization.**
+> The former per-platform repositories (`signallockapp/macos`, `signallockapp/windows`, `signallockapp/linux`) are no longer maintained and point to the new repository. Source code, issues, pull requests and releases all live there.
+
 ## SignalLock
 
 **Your computer locks itself when you walk away.**
